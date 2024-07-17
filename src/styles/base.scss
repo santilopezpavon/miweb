@@ -1,0 +1,43 @@
+html {
+    font-size: 10px;
+    body {
+        font-size: 1.6rem;
+        background-color: #0f0715;
+        font-family: Roboto;
+    }
+    * {
+        line-height: 1.2;
+    }
+}
+.ff-sora {
+    font-family: Sora;
+}
+
+.legible {
+	line-height: 1.5;
+}
+
+.color-text {
+    background: #875087;
+    background: -webkit-gradient( linear, left top, right top, from(#875087), to(#fff) );
+    background: -o-linear-gradient( left, #875087 0%, #fff 100% );
+    background: linear-gradient( to right, #875087 0%, #fff 100% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.element {
+	margin-bottom: 7rem;
+
+}
+
+.color-primary {
+	color: #8750f7;
+}
+a {
+    text-decoration: none;
+    transition: all 0.3s ease-in-out 0s;
+    &:hover {
+        color: #8750f7;
+    }
+}

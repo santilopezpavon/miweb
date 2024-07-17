@@ -1,0 +1,22 @@
+---
+interface Props {
+    bigText:string,
+    smallText:string,
+    bigTextSide?:string
+}
+const { bigText, smallText, bigTextSide } = Astro.props;
+---
+<div class="text-center key-figure">
+    <p><span class="lg:text-lg font-bold ff-sora">{bigText}</span>{bigTextSide && <span class="text-xs ml-3">{bigTextSide}</span>}</p>
+    {smallText && <p class="text-xs">{smallText}</p>}
+    
+</div>
+
+<style lang="scss">
+.key-figure {
+    max-width: 20rem;
+    margin: auto;
+}
+
+</style>
+

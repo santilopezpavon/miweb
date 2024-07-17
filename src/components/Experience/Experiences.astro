@@ -1,0 +1,167 @@
+---
+import { colGrid, containerGrid } from "../../Utils/ClassGenerator.js";
+import Experience from "./Experience.astro";
+/*interface Props {
+    title:string,
+}
+const { bigText, smallText, bigTextSide } = Astro.props;*/
+---
+
+<div class={containerGrid()}>
+    <div class={colGrid("w-full md:w-1/3 text-format")}>
+        <Experience
+            title="Mi experiencia"
+            items={[
+                {
+                    years: "2019 - Actualidad",
+                    position: "Drupal Full Stack Developer + NextJS Developer",
+                    company: "Seidor",
+                    bullets: [
+                        "Desarrollo y liderazgo técnico en proyectos Drupal monolíticos",
+                        "Desarrollo y liderazgo técnico en proyectos Headless utilizando Drupal como CMS y NextJS como frontal",
+                        "Mantenimiento de proyectos existentes y desarrollo de nuevos",
+                        "Trabajo con instituciones educativas y farmacéuticas como principales clientes",
+                    ],
+                },
+                {
+                    years: "2015 - 2019",
+                    position: "Drupal Full Stack Developer",
+                    company: "Drauta",
+                    bullets: [
+                        "Desarrollador Drupal Full Stack",
+                        "Ejecución de proyectos en solitario y en equipo de pequeña y mediana envergadura",
+                        "Formación de nuevos miembros del equipo",
+                        "Trabajo con instituciones públicas y educativas",
+                    ],
+                },
+                {
+                    years: "2014 - 2015",
+                    position: "Wordpress Developer",
+                    company: "Pardebits",
+                    bullets: [
+                        "Desarrollador de proyectos en Wordpress",
+                        "Realización de proyectos ambiciosos en la capa frontal",
+                        "Trabajo con empresas medianas como principales clientes",
+                    ],
+                },
+                {
+                    years: "2011",
+                    position: "Delineante de planes de autoprotección",
+                    company: "Ayuntamiento de Mataró",
+                    bullets: [
+                        "Desarrollo de planes de autoprotección",
+                        "Visitas a instituciones públicas para verificar el cumplimiento"
+                    ],
+                },
+                {
+                    years: "2010",
+                    position: "Reponedor y Cajero",
+                    company: "Mercadona",
+                    bullets: [
+                    ],
+                },
+                {
+                    years: "2009",
+                    position: "Reponedor y Cajero",
+                    company: "AKI Bricolaje",
+                    bullets: [
+                    ],
+                },
+                {
+                    years: "2006 - 2008",
+                    position: "Delineante de ICT",
+                    company: "Serfin RVSL",
+                    bullets: [
+                    ],
+                },
+            ]}
+        />
+    </div>
+    <div class={colGrid("w-full md:w-1/3 text-format")}>
+        <Experience
+            title="Mi formación"
+            items={[
+                {
+                    years: "2013 - 2015",
+                    position: "Grado superior en desarrollo de aplicaciones web",
+                    company: "IES Thos i Codina",
+                    bullets: [
+                    ],
+                },
+                {
+                    years: "2008 - 2013",
+                    position: "Grado en ciencia y tecnología de la edificación (arquitectura técnica)",
+                    company: "Escola Politècnica Superior d'Edificació de Barcelona",
+                    bullets: [
+                    ],
+                },
+                {
+                    years: "2005 - 2007",
+                    position: "Técnico superior en aplicación y desarrollo de proyectos de construcción",
+                    company: "IES Miquel Biada",
+                    bullets: [
+                    ],
+                },
+                {
+                    years: "2003 - 2005",
+                    position: "Bachillerato tecnológico",
+                    company: "IES Alexandre Satorras",
+                    bullets: [
+                    ],
+                },
+            ]}
+        />
+    </div>
+
+    <div class={colGrid("w-full md:w-1/3 text-format")}>
+        <Experience
+            title="Formación aux"
+            items={[
+                {
+                    years: "2023",
+                    position: "Machine Learning Specialization",
+                    company: "DeepLearning.AI, Stanford University",
+                    bullets: [
+                    ],
+                    link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/YKEG7V9EZGA5'
+                },
+                {
+                    years: "2023",
+                    position: "Programa Especializado - Mathematics for Machine Learning and Data Science",
+                    company: "Coursera",
+                    bullets: [
+                    ],
+                    link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/S8STN6T4C7TW'
+
+                },
+                {
+                    years: "2022",
+                    position: "Programa Especializado - IBM Data Science",
+                    company: "Coursera",
+                    bullets: [
+                    ],
+                    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/D9CHTLUGHF42"
+                },
+            ]}
+        />
+    </div>
+</div>
+<style lang="scss">
+    .text-format {
+        li {
+            display: block;
+            position: relative;
+            z-index: 1;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            &::before {
+                content: "*";
+                color: #8750f7;
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 2rem;
+            }
+        }
+    }
+</style>

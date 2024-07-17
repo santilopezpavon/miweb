@@ -1,0 +1,42 @@
+---
+import {colGrid, containerGrid} from "../../Utils/ClassGenerator.js"
+
+---
+<header class={containerGrid("text-white justify-end")}>
+    <nav class={colGrid("all-menu-content")}>
+        <ul class="menu-part ">
+            <li><a href="/">Sobre mí</a></li>
+            <li><a href="/">Artículos</a></li>
+            <li><a href="/">Proyectos</a></li>
+            <li><a href="mailto:s.lopez_@outlook.com">Contacta</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style lang="scss">
+.all-menu-content {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    .email-part {
+        a {
+            padding-left: 0;
+        }
+    }
+    li {
+        display: inline-block;    
+        &:first-of-type a {
+            padding-left: 0;
+        }
+        &:last-of-type a {
+            padding-right: 0;
+        }   
+    }
+    a {
+        padding: 1rem;
+        display: inline-block;
+      
+    }
+  
+}
+
+</style>

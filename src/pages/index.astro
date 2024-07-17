@@ -1,0 +1,22 @@
+---
+import "../styles/_variables.scss";
+import { Image } from 'astro:assets';
+import testImage from '../assets/img/santi-lopez.jpeg'
+import TextMedia from '../components/text-media/TextMedia.astro'
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import KeyFigures from "../components/KeyFigures/KeyFigures.astro";
+import Experiences from "../components/Experience/Experiences.astro";
+// https://preview.themeforest.net/item/gerold-personal-portfolio-html-template/full_screen_preview/50928965?_ga=2.75149015.412712396.1720715753-1978362376.1720715753
+---
+
+<BaseLayout title="Astro">
+	<TextMedia></TextMedia>
+	<KeyFigures></KeyFigures>
+	<Experiences/>
+</BaseLayout>
+
+<style lang="scss">
+
+
+</style>

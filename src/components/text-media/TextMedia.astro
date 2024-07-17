@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets';
+import testImage from '../../assets/img/santi-lopez.jpeg'
+import Button from "../Buttons/Button.astro"
+---
+    <div class="element max-w-screen-xl mx-auto flex flex-wrap items-center relative">
+       
+        <div class="w-full md:w-1/2 px-3.5 ">
+            <div class="max-w-50">
+                <p class="text-white lg:text-lg font-bold mb-3 ff-sora">Soy Santi López</p>
+                <p class="lg:text-xl font-bold mb-3 color-text ff-sora">
+                    Desarrollador Web  Full Stack 
+                </p>
+                <p class="text-white text-xs mb-6">
+                    Soy un apasionado desarrollador Full Stack con más de 10 años de experiencia en PHP, JavaScript y Drupal, además de 3 años de experiencia con Next.js (React JS). He trabajado en proyectos de desarrollo web, desde la creación de APIs hasta la implementación de interfaces de usuario. Mi objetivo es seguir aprendiendo y creciendo en el mundo de la tecnología.
+                </p>
+                <Button label="Hola" link="https://www.google.es"/>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 px-3.5 relative">
+            <div class="marco-img">
+                <Image  src={testImage}  alt="A bird sitting on a nest of eggs." />
+            </div>
+        </div>
+    </div>
+    
+
+<style lang="scss" is:global>
+    .marco-img {
+        display: flex;
+        justify-content: center;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: #8750f7;
+            background: -o-linear-gradient(
+                190deg,
+                #8750f7 0%,
+                rgba(115, 67, 210, 0) 100%
+            );
+            background: linear-gradient(
+                260deg,
+                #8750f7 0%,
+                rgba(115, 67, 210, 0) 100%
+            );
+            -webkit-filter: blur(150px);
+            filter: blur(150px);
+            margin-left: -5%;
+            margin-bottom: -5%;
+                }
+        img {
+        display: inline-block;
+        border-radius: 15px;
+        -webkit-transform: rotate(4.29deg);
+        -ms-transform: rotate(4.29deg);
+        transform: rotate(4.29deg);
+        position: relative;
+        border: 2px solid #8750f7;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        }
+    }
+</style>

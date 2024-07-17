@@ -1,0 +1,53 @@
+---
+import {colGrid, containerGrid} from "../../Utils/ClassGenerator.js"
+import Button from "../Buttons/Button.astro"
+interface Props {
+    title:string,
+    items:Array<{years:string, position:string, company:string, bullets:Array<String>, link?:string}>    
+}
+const { title, items } = Astro.props;
+
+---
+<div class="text-format">
+    <p class="color-text text-white lg:text-lg font-bold mb-10 ff-sora ">{title}</p>
+    {items && items.map((item) => (
+        <div class="mb-7">
+            <p class="color-primary font-bold ff-sora mb-3">{item.years}</p>
+            <p class="text-white font-bold ff-sora">{item.position}</p>
+            <p class="text-white text-xs mb-3">{item.company}</p>
+
+            <div class="text-white text-xs">
+                <ul>
+                    {item.bullets && item.bullets.map((bullet) => (
+                        <li>{bullet}</li>
+                    ))}
+                </ul>
+            </div>
+            {
+                item.link ? (
+                <Button label="Credencial" link={item.link} type="small" />
+                ) :null
+            }
+        </div>
+    ))}    
+</div>
+<style lang="scss">
+    .text-format {
+        li {
+            display: block;
+            position: relative;
+            z-index: 1;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            &::before {
+                content: "*";
+                color: #8750f7;
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 2rem;
+            }
+        }
+    }
+    </style>
+    

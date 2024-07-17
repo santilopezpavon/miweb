@@ -1,0 +1,14 @@
+---
+const { componentName } = Astro.props;
+import Header from "../header/Header.astro";
+import Footer from "../footer/Footer.astro";
+
+const componentsArray:any = {
+    "header" : Header, 
+    "footer": Footer
+};
+
+const ComponentCurrent = componentsArray[componentName];
+---
+
+<ComponentCurrent />
