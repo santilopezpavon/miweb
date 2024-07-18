@@ -2,6 +2,15 @@
 import '../styles/base.scss'; 
 import Components from '../components/Dynamic/Components.astro';
 const { title } = Astro.props;
+{/* 
+import { getCollection, getEntry } from 'astro:content';
+
+// Get all entries from a collection.
+// Requires the name of the collection as an argument.
+// Example: retrieve `src/content/blog/**`
+const allBlogPosts = await getCollection('blog');
+console.log(allBlogPosts);
+*/}
 ---
 <html lang="es">
   <head>
