@@ -1,4 +1,6 @@
 ---
+import {fontSize} from "../../Utils/FontsSizes";
+
 interface Props {
     bigText:string,
     smallText:string,
@@ -7,7 +9,7 @@ interface Props {
 const { bigText, smallText, bigTextSide } = Astro.props;
 ---
 <div class="text-center key-figure">
-    <p><span class="lg:text-lg font-bold ff-sora">{bigText}</span>{bigTextSide && <span class="text-xs ml-3">{bigTextSide}</span>}</p>
+    <p><span class={fontSize(2) + " font-bold ff-sora"}  >{bigText}</span>{bigTextSide && <span class="text-xs ml-3">{bigTextSide}</span>}</p>
     {smallText && <p class="text-xs">{smallText}</p>}
     
 </div>

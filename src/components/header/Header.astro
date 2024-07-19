@@ -1,11 +1,12 @@
 ---
 import {colGrid, containerGrid} from "../../Utils/ClassGenerator.js"
+import { linkGenerate } from "../../Utils/LinksGenerator";
 
 ---
 <header class={containerGrid("text-white justify-end")}>
     <nav class={colGrid("all-menu-content")}>
         <ul class="menu-part ">
-            <li><a href="/">Sobre mí</a></li>
+            <li><a href={linkGenerate("/")}>Sobre mí</a></li>
             {/*             <li><a href="/">Artículos</a></li>
             <li><a href="/">Proyectos</a></li>
  */}

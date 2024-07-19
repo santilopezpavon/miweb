@@ -1,0 +1,72 @@
+---
+import { colGrid, containerGrid } from "../../Utils/ClassGenerator.js";
+import Icon from "./Icon.astro";
+import javascriptIcon from "../../assets/img/javascript.svg";
+import phpIcon from "../../assets/img/php.svg";
+import cssIcon from "../../assets/img/css.svg";
+import htmlIcon from "../../assets/img/html.svg";
+import linuxIcon from "../../assets/img/linux.svg";
+import nodejsIcon from "../../assets/img/nodejs.svg";
+import reactIcon from "../../assets/img/react.svg";
+import sqlIcon from "../../assets/img/sql.svg";
+import drupalIcon from "../../assets/img/drupal.svg";
+
+import { Image } from "astro:assets";
+
+const data = [
+    {
+        "text": "Drupal",
+        "img": drupalIcon
+    },
+    {
+        "text": "PHP",
+        "img": phpIcon
+    },
+    {
+        "text": "SQL",
+        "img": sqlIcon
+    },
+    {
+        "text": "JavaScript",
+        "img": javascriptIcon
+    },
+    {
+        "text": "HTML",
+        "img": htmlIcon
+    },
+    {
+        "text": "CSS",
+        "img": cssIcon
+    },
+    {
+        "text": "Linux",
+        "img": linuxIcon
+    },
+    {
+        "text": "NextJS / React",
+        "img": reactIcon
+    },
+    {
+        "text": "NodeJS",
+        "img": nodejsIcon
+    },
+  
+    
+];
+---
+
+<div class={containerGrid("justify-center")}>
+    {data && data.map((item) => (
+         <div class={colGrid("mb-16")}>
+            <Icon text={item.text}>
+                <Image
+                    src={item.img}
+                    alt={item.text}
+                />
+            </Icon>
+        </div>
+    ))}
+   
+
+   
+</div>

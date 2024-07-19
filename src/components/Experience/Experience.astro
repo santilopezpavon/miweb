@@ -1,6 +1,8 @@
 ---
 import {colGrid, containerGrid} from "../../Utils/ClassGenerator.js"
 import Button from "../Buttons/Button.astro"
+import {fontSize} from "../../Utils/FontsSizes";
+
 interface Props {
     title:string,
     items:Array<{years:string, position:string, company:string, bullets:Array<String>, link?:string}>    
@@ -9,14 +11,14 @@ const { title, items } = Astro.props;
 
 ---
 <div class="text-format">
-    <p class="color-text text-white lg:text-lg font-bold mb-10 ff-sora ">{title}</p>
+    <p class={fontSize(2) + " color-text  font-bold mb-10 ff-sora "}  >{title}</p>
     {items && items.map((item) => (
         <div class="mb-7">
             <p class="color-primary font-bold ff-sora mb-3">{item.years}</p>
             <p class="text-white font-bold ff-sora">{item.position}</p>
             <p class="text-white text-xs mb-3">{item.company}</p>
 
-            <div class="text-white text-xs">
+            <div class={fontSize(1) + " text-white"}  >
                 <ul>
                     {item.bullets && item.bullets.map((bullet) => (
                         <li>{bullet}</li>

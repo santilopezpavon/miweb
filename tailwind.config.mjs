@@ -5,7 +5,12 @@ export default {
 		fontSize: {
 			'xl': '6.5rem',
 			'lg': '3.6rem',
+			"lg-red": "2.5rem",
+			"xl-red": "4rem",
+
 			'md': '2rem',
+			'md-red': '1.8rem',
+
 			'xs': ['1.6rem', '1.5']
 		},
 		

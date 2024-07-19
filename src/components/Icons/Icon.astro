@@ -1,0 +1,45 @@
+---
+interface Props {
+    text:string,
+}
+const { text } = Astro.props;
+
+
+---
+
+<div class="content-icon w-full flex-wrap">
+    <div class="icon "><slot /></div>
+    <p class="text-center w-full text-icon color-primary ff-sora">{text}</p>
+</div>
+
+<style lang="scss" is:global>
+    .content-icon {
+        width: 150px;
+        height: 200px;
+        background-color: #140c1c;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        align-content: flex-end;
+        align-items: end;
+        border: 1px solid transparent;
+        border-radius: 25px;
+
+    }
+    .icon {
+        max-width: 80%;
+        height: 100px;
+        margin: 20px;
+        align-items: end;
+        display: flex;
+        img {
+            object-fit: contain;
+            max-width: 60px;
+            max-height: 60px;
+        }
+    }
+    .text-icon {
+        margin-bottom: 20px;
+    margin-top: 20px;
+    }
+</style>

@@ -1,5 +1,5 @@
 ---
-import { colGrid, containerGrid } from "../../Utils/ClassGenerator.js";
+import { colGrid, containerGrid, rowGrid } from "../../Utils/ClassGenerator.js";
 import Experience from "./Experience.astro";
 /*interface Props {
     title:string,
@@ -8,158 +8,157 @@ const { bigText, smallText, bigTextSide } = Astro.props;*/
 ---
 
 <div class={containerGrid()}>
-    <div class={colGrid("w-full md:w-1/2 text-format mb-20")}>
-        <Experience
-            title="Experiencia en el Sector"
-            items={[
-                {
-                    years: "2019 - Actualidad",
-                    position: "Drupal Full Stack Developer + NextJS Developer",
-                    company: "Seidor",
-                    bullets: [
-                        "Liderazgo técnico y desarrollo en proyectos monolíticos con Drupal",
-                        "Desarrollo y liderazgo técnico en proyectos Headless utilizando Drupal como CMS y NextJS como frontend",
-                        "Mantenimiento y optimización de proyectos existentes, así como desarrollo de nuevos",
-                        "Colaboración con clientes del sector educativo y farmacéutico para cumplir con sus necesidades tecnológicas y de negocio",
-                        "Implementación de soluciones escalables y de alto rendimiento adaptadas a diferentes entornos.",
-                    ],
-                },
-                {
-                    years: "2015 - 2019",
-                    position: "Drupal Full Stack Developer",
-                    company: "Drauta",
-                    bullets: [
-                        "Desarrollo integral de proyectos Drupal en solitario y en equipo, abarcando desde pequeñas a medianas envergaduras",
-                        "Formación y mentoría de nuevos miembros del equipo, facilitando su integración y desarrollo de habilidades",
-                        "Participación en proyectos con instituciones públicas y educativas, asegurando altos estándares de calidad y cumplimiento de requisitos",
-                        "Adaptación y personalización de módulos y temas para satisfacer necesidades específicas de los clientes",
-                    ],
-                },
-                {
-                    years: "2014 - 2015",
-                    position: "Wordpress Developer",
-                    company: "Pardebits",
-                    bullets: [
-                        "Desarrollo y mantenimiento de proyectos ambiciosos en Wordpress, con un enfoque en la capa frontend",
-                        "Colaboración con empresas medianas para crear soluciones personalizadas que mejoren su presencia en línea",
-                        "Implementación de funcionalidades avanzadas y optimización del rendimiento de sitios web",
-                        "Trabajo en equipo para cumplir con plazos ajustados y entregar proyectos de alta calidad"
-                    ],
-                },
-              
-            ]}
-        />
-    </div>
-    <div class={colGrid("w-full md:w-1/2 text-format mb-20")}>
-        <Experience
-            title="Experiencia fuera del Sector"
-            items={[
-                {
-                    years: "2011",
-                    position: "Delineante de planes de autoprotección",
-                    company: "Ayuntamiento de Mataró",
-                    bullets: [
-                        "Desarrollo y redacción de planes de autoprotección para instituciones públicas",
-                        "Realización de visitas a instituciones para verificar el cumplimiento de normativas de seguridad"
-                    ],
-                },
-                {
-                    years: "2010",
-                    position: "Reponedor y Cajero",
-                    company: "Mercadona",
-                    bullets: [
-                        "Atención al cliente y gestión de caja",
-                        "Reposición de productos y mantenimiento del orden en tienda"
-                    ],
-                },
-                {
-                    years: "2009",
-                    position: "Reponedor y Cajero",
-                    company: "AKI Bricolaje",
-                    bullets: [
-                        "Atención al cliente y gestión de caja",
-                        "Reposición de productos y mantenimiento del orden en tienda"
-                    ],
-                },
-                {
-                    years: "2006 - 2008",
-                    position: "Delineante de ICT",
-                    company: "Serfin RVSL",
-                    bullets: [
-                        "Desarrollo de planes y delineación de proyectos de Infraestructuras Comunes de Telecomunicaciones (ICT)"
-                    ],
-                },
-            ]}
-        />
-    </div>
+    <div class={rowGrid()}>
+        <div class={colGrid("w-full md:w-1/2 text-format mb-20")}>
+            <Experience
+                title="Experiencia en el Sector"
+                items={[
+                    {
+                        years: "2019 - Actualidad",
+                        position:
+                            "Drupal Full Stack Developer + NextJS Developer",
+                        company: "Seidor",
+                        bullets: [
+                            "Liderazgo técnico y desarrollo en proyectos monolíticos con Drupal",
+                            "Desarrollo y liderazgo técnico en proyectos Headless utilizando Drupal como CMS y NextJS como frontend",
+                            "Mantenimiento y optimización de proyectos existentes, así como desarrollo de nuevos",
+                            "Colaboración con clientes del sector educativo y farmacéutico para cumplir con sus necesidades tecnológicas y de negocio",
+                            "Implementación de soluciones escalables y de alto rendimiento adaptadas a diferentes entornos.",
+                        ],
+                    },
+                    {
+                        years: "2015 - 2019",
+                        position: "Drupal Full Stack Developer",
+                        company: "Drauta",
+                        bullets: [
+                            "Desarrollo integral de proyectos Drupal en solitario y en equipo, abarcando desde pequeñas a medianas envergaduras",
+                            "Formación y mentoría de nuevos miembros del equipo, facilitando su integración y desarrollo de habilidades",
+                            "Participación en proyectos con instituciones públicas y educativas, asegurando altos estándares de calidad y cumplimiento de requisitos",
+                            "Adaptación y personalización de módulos y temas para satisfacer necesidades específicas de los clientes",
+                        ],
+                    },
+                    {
+                        years: "2014 - 2015",
+                        position: "Wordpress Developer",
+                        company: "Pardebits",
+                        bullets: [
+                            "Desarrollo y mantenimiento de proyectos ambiciosos en Wordpress, con un enfoque en la capa frontend",
+                            "Colaboración con empresas medianas para crear soluciones personalizadas que mejoren su presencia en línea",
+                            "Implementación de funcionalidades avanzadas y optimización del rendimiento de sitios web",
+                            "Trabajo en equipo para cumplir con plazos ajustados y entregar proyectos de alta calidad",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+        <div class={colGrid("w-full md:w-1/2 text-format mb-20")}>
+            <Experience
+                title="Experiencia fuera del Sector"
+                items={[
+                    {
+                        years: "2011",
+                        position: "Delineante de planes de autoprotección",
+                        company: "Ayuntamiento de Mataró",
+                        bullets: [
+                            "Desarrollo y redacción de planes de autoprotección para instituciones públicas",
+                            "Realización de visitas a instituciones para verificar el cumplimiento de normativas de seguridad",
+                        ],
+                    },
+                    {
+                        years: "2010",
+                        position: "Reponedor y Cajero",
+                        company: "Mercadona",
+                        bullets: [
+                            "Atención al cliente y gestión de caja",
+                            "Reposición de productos y mantenimiento del orden en tienda",
+                        ],
+                    },
+                    {
+                        years: "2009",
+                        position: "Reponedor y Cajero",
+                        company: "AKI Bricolaje",
+                        bullets: [
+                            "Atención al cliente y gestión de caja",
+                            "Reposición de productos y mantenimiento del orden en tienda",
+                        ],
+                    },
+                    {
+                        years: "2006 - 2008",
+                        position: "Delineante de ICT",
+                        company: "Serfin RVSL",
+                        bullets: [
+                            "Desarrollo de planes y delineación de proyectos de Infraestructuras Comunes de Telecomunicaciones (ICT)",
+                        ],
+                    },
+                ]}
+            />
+        </div>
 
-    <div class={colGrid("w-full md:w-1/2 text-format")}>
-        <Experience
-            title="Mi formación"
-            items={[
-                {
-                    years: "2013 - 2015",
-                    position: "Grado superior en desarrollo de aplicaciones web",
-                    company: "IES Thos i Codina",
-                    bullets: [
-                    ],
-                },
-                {
-                    years: "2008 - 2013",
-                    position: "Grado en ciencia y tecnología de la edificación (arquitectura técnica)",
-                    company: "Escola Politècnica Superior d'Edificació de Barcelona",
-                    bullets: [
-                    ],
-                },
-                {
-                    years: "2005 - 2007",
-                    position: "Técnico superior en aplicación y desarrollo de proyectos de construcción",
-                    company: "IES Miquel Biada",
-                    bullets: [
-                    ],
-                },
-                {
-                    years: "2003 - 2005",
-                    position: "Bachillerato tecnológico",
-                    company: "IES Alexandre Satorras",
-                    bullets: [
-                    ],
-                },
-            ]}
-        />
-    </div>
+        <div class={colGrid("w-full md:w-1/2 text-format")}>
+            <Experience
+                title="Mi formación"
+                items={[
+                    {
+                        years: "2013 - 2015",
+                        position:
+                            "Grado superior en desarrollo de aplicaciones web",
+                        company: "IES Thos i Codina",
+                        bullets: [],
+                    },
+                    {
+                        years: "2008 - 2013",
+                        position:
+                            "Grado en ciencia y tecnología de la edificación (arquitectura técnica)",
+                        company:
+                            "Escola Politècnica Superior d'Edificació de Barcelona",
+                        bullets: [],
+                    },
+                    {
+                        years: "2005 - 2007",
+                        position:
+                            "Técnico superior en aplicación y desarrollo de proyectos de construcción",
+                        company: "IES Miquel Biada",
+                        bullets: [],
+                    },
+                    {
+                        years: "2003 - 2005",
+                        position: "Bachillerato tecnológico",
+                        company: "IES Alexandre Satorras",
+                        bullets: [],
+                    },
+                ]}
+            />
+        </div>
 
-    <div class={colGrid("w-full md:w-1/3 text-format")}>
-        <Experience
-            title="Formación aux"
-            items={[
-                {
-                    years: "2023",
-                    position: "Machine Learning Specialization",
-                    company: "DeepLearning.AI, Stanford University",
-                    bullets: [
-                    ],
-                    link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/YKEG7V9EZGA5'
-                },
-                {
-                    years: "2023",
-                    position: "Programa Especializado - Mathematics for Machine Learning and Data Science",
-                    company: "Coursera",
-                    bullets: [
-                    ],
-                    link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/S8STN6T4C7TW'
-
-                },
-                {
-                    years: "2022",
-                    position: "Programa Especializado - IBM Data Science",
-                    company: "Coursera",
-                    bullets: [
-                    ],
-                    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/D9CHTLUGHF42"
-                },
-            ]}
-        />
+        <div class={colGrid("w-full md:w-1/3 text-format")}>
+            <Experience
+                title="Formación aux"
+                items={[
+                    {
+                        years: "2023",
+                        position: "Machine Learning Specialization",
+                        company: "DeepLearning.AI, Stanford University",
+                        bullets: [],
+                        link: "https://www.coursera.org/account/accomplishments/specialization/certificate/YKEG7V9EZGA5",
+                    },
+                    {
+                        years: "2023",
+                        position:
+                            "Programa Especializado - Mathematics for Machine Learning and Data Science",
+                        company: "Coursera",
+                        bullets: [],
+                        link: "https://www.coursera.org/account/accomplishments/specialization/certificate/S8STN6T4C7TW",
+                    },
+                    {
+                        years: "2022",
+                        position: "Programa Especializado - IBM Data Science",
+                        company: "Coursera",
+                        bullets: [],
+                        link: "https://www.coursera.org/account/accomplishments/specialization/certificate/D9CHTLUGHF42",
+                    },
+                ]}
+            />
+        </div>
     </div>
 </div>
 <style lang="scss">
