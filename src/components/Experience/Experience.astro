@@ -27,7 +27,7 @@ const { title, items } = Astro.props;
             </div>
             {
                 item.link ? (
-                <Button label="Credencial" link={item.link} type="small" />
+                <Button target="_blank" label="Credencial" link={item.link} type="small" />
                 ) :null
             }
         </div>

@@ -1,13 +1,12 @@
 ---
-const { label, link, type='big' } = Astro.props;
+const { label, link, type='big', target } = Astro.props;
 ---
 
 {
     type == 'big' ? (
-        <a class="btn" href={link}>{label}</a>
+        <a class="btn" href={link} target={target}>{label}</a>
     ): type == 'small' ?(
-        <a class="btn btn-small" href={link}>{label}</a>
-
+        <a class="btn btn-small" href={link} target={target}>{label}</a>
     ): null
 }
 
