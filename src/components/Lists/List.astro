@@ -1,0 +1,18 @@
+---
+import { colGrid, containerGrid, rowGrid } from "../../Utils/ClassGenerator.js";
+import { fontSize } from "../../Utils/FontsSizes";
+interface Props {
+    items:Array<any>,
+}
+const { items } = Astro.props;
+---
+<div class={containerGrid("items-center")}>
+    <div class={rowGrid("items-center")}>
+            {items && items.map((item) => (
+                <div class={colGrid("md:w-1/2 mb-16 md:mb-0 text-white")}>
+                    <p class={fontSize(2) + " font-bold mb-3 ff-sora"} >{item.data.title}</p>
+                    <p class={fontSize(1)} >{item.data.description}</p>
+                </div>
+            ))}
+    </div>
+</div>

@@ -22,11 +22,12 @@ console.log();
     .blog-content {
         * {
             line-height: 1.5;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            color: #dddddd;
         }
         h1 {
             font-family: "Sora Variable", sans-serif;
-            font-size: 3rem;
+            font-size: 4.5rem;
             font-weight: 700;
             background: #875087;
             background: linear-gradient(to right, #875087 0%, #fff 100%);
@@ -41,7 +42,7 @@ console.log();
         
         h2{
             font-family: "Sora Variable", sans-serif;
-            font-size: 2.4rem;
+            font-size: 3.6rem;
             font-weight: 700;
             background: #875087;
             background: linear-gradient(to right, #875087 0%, #fff 100%);
@@ -52,7 +53,7 @@ console.log();
         }
         h3 {
             font-family: "Sora Variable", sans-serif;
-            font-size: 1.8rem;
+            font-size: 2.6rem;
             font-weight: 700;
             background: #875087;
             background: linear-gradient(to right, #875087 0%, #fff 100%);
@@ -60,6 +61,35 @@ console.log();
             -webkit-text-fill-color: transparent;
             margin-bottom: 2.5rem;
 
+        }
+        li {
+            display: block;
+            position: relative;
+            z-index: 1;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            &::before {
+                content: "*";
+                color: #8750f7;
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 2rem;
+            }
+        }
+
+        .astro-code {
+            padding: 20px;
+            margin-bottom: 2rem;
+        }
+        strong {
+            color: #875087;
+
+        }
+
+        img {
+            border-radius: 15px;
+    border: 5px solid #8750f7;
         }
     }
 

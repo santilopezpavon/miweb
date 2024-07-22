@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import List from "../../components/Lists/List.astro";
+const blogEntries = await getCollection('blog');
+---
+
+<BaseLayout title="Guías básicas" description="">
+    <List items={blogEntries} />
+</BaseLayout>
+

@@ -11,13 +11,17 @@ export default {
 			'md': '2rem',
 			'md-red': '1.8rem',
 
-			'xs': ['1.6rem', '1.5']
+			'xs': ['1.8rem', '1.5']
 		},
 		
 		extend: {
 			maxWidth: {
 				'50': '50rem',
-			}
+			},
+			colors: {
+				'white': '#dddddd',
+			  },
+		
 		
 		},
 	},
