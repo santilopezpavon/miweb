@@ -15,6 +15,7 @@
     "@fontsource-variable/sora": "^5.0.18",
     "@fontsource/roboto": "^5.0.13",
     "astro": "^4.11.5",
+    "astro-breadcrumbs": "^2.3.1",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.3"
   },

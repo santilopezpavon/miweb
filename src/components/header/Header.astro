@@ -3,7 +3,7 @@ import {colGrid, containerGrid} from "../../Utils/ClassGenerator.js"
 import { linkGenerate } from "../../Utils/LinksGenerator";
 
 ---
-<header class={containerGrid("text-white justify-end")}>
+<header class={containerGrid("text-white justify-end base-header")}>
     <nav class={colGrid("all-menu-content")}>
         <ul class="menu-part ">
             <li><a href={linkGenerate("/")}>Sobre mí</a></li>
@@ -16,6 +16,10 @@ import { linkGenerate } from "../../Utils/LinksGenerator";
 </header>
 
 <style lang="scss">
+    .base-header {
+        position: relative;
+        z-index: 1;
+    }
 .all-menu-content {
     padding-top: 3rem;
     padding-bottom: 3rem;

@@ -2,16 +2,36 @@
 import BaseLayout from "./BaseLayout.astro";
 import {colGrid, containerGrid, rowGrid} from "../Utils/ClassGenerator"
 import {fontSize} from "../Utils/FontsSizes"
+import  Breadcrumbs  from "../components/Breadcrumbs/Breadcrumbs.astro";
+import "astro-breadcrumbs/breadcrumbs.css";
 
 const html = await Astro.slots.render('default');
+import HeaderImg from "../assets/img/header.jpg";
+import { Image } from "astro:assets";
 
 console.log();
+
+const breadcrumbItems = [
+  { label: 'Home', url: '/' },
+  { label: 'Category', url: '/category' },
+  { label: 'Subcategory', url: '/category/subcategory' },
+  { label: 'Current Page' },
+];
+
 ---
 
 <BaseLayout title="Astro">
-    <div class={containerGrid() +  " text-white"}>
+  
+    <div class={containerGrid() +  " text-white base-content-blog"}>
         <div class={rowGrid()}>
             <div class={colGrid("md:w-10/12 blog-content")}>
+                
+                <div class="image-background">
+                    <div class="overlay"></div>
+                    <Image src={HeaderImg} alt="hola"/>
+                </div>
+                <Breadcrumbs items={breadcrumbItems} />
+
                 <Fragment set:html={html} />
             </div>
         </div>
@@ -19,6 +39,29 @@ console.log();
 </BaseLayout>
 
 <style lang="scss" is:global>
+   
+   /* .overlay {
+        background-color: rgb(20, 12, 28);
+        opacity: 0.4;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }*/
+   
+    .image-background {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 3rem;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border: none!important;
+        }
+    }
     .blog-content {
         * {
             line-height: 1.5;
@@ -89,7 +132,7 @@ console.log();
 
         img {
             border-radius: 15px;
-    border: 5px solid #8750f7;
+    border: 5px solid transparent;
         }
     }
 

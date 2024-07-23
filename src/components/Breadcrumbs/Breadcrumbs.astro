@@ -1,0 +1,56 @@
+---
+// Breadcrumb.astro
+
+export interface BreadcrumbItem {
+  label: string;
+  url?: string;
+}
+
+export interface BreadcrumbProps {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props as BreadcrumbProps;
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    {items.map((item, index) => (
+      <li class={`breadcrumb-item${index === items.length - 1 ? ' active' : ''}`} aria-current={index === items.length - 1 ? 'page' : undefined}>
+        {item.url ? <a href={item.url}>{item.label}</a> : item.label}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style lang="scss">
+    ol {
+        padding-left: 0;
+        list-style: none;
+        li:first-of-type {
+            padding-left: 0;
+        }
+        li:first-of-type:before {
+                content: none!important;
+        }
+    }
+.breadcrumb {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '/';
+  padding: 0 0.5em;
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+  /*color: #007bff;*/
+}
+
+.breadcrumb-item.active {
+  color: #6c757d;
+}
+</style>
