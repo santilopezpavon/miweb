@@ -15,7 +15,9 @@ const breadcrumbItems = breadCrumbLinks;
 <BaseLayout title={Astro.props.title} description={Astro.props.description} pretitle={Astro.props.pretitle}>  
 
     <div class={containerGrid("text-white")}>
-        <Breadcrumbs items={breadcrumbItems} />
+        <div class={colGrid("w-full")} >
+            <Breadcrumbs items={breadcrumbItems} />
+        </div>
     </div>
     <Text 
         pretitle={Astro.props.pretitle}
@@ -25,7 +27,7 @@ const breadcrumbItems = breadCrumbLinks;
 
     <div class={containerGrid() +  " text-white base-content-blog"}>
         <div class={rowGrid()}>
-            <div class={colGrid("md:w-10/12 blog-content")}>           
+            <div class={colGrid("w-full md:w-10/12 blog-content")}>           
                 <Fragment set:html={html} />
             </div>
         </div>

@@ -40,9 +40,9 @@ export function getBreadCrumb(currentUrl, currentPage = "") {
     }
 
     if(currentPage !== "") {
-        preUrls.push({
+       /* preUrls.push({
             "label": currentPage
-        });
+        });*/
     }
 
     return preUrls;

@@ -7,6 +7,7 @@ export function containerGrid(clasesContainer = '') {
 }
 
 export function rowGrid(clasesRow = '') {
-    return " -mx-8 flex flex-wrap w-full	 " + clasesRow;
+    // return " -mx-8 flex flex-wrap w-full	 " + clasesRow;
+     return "  flex flex-wrap w-full	 " + clasesRow;
 
 }
