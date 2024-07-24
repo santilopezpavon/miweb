@@ -4,7 +4,7 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 import { getCollection } from 'astro:content';
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog');
+  const blogEntries = await getCollection('proyectos');
   return blogEntries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
@@ -16,7 +16,7 @@ console.log(entry.data);
 
 
 ---
-<BlogLayout title={entry.data.title} description={entry.data.description} pretitle={entry.data.pretitle} >
+<BlogLayout titleTeaser={entry.data.titleTeaser} title={entry.data.title} description={entry.data.description} pretitle={entry.data.pretitle} >
  
   <Content />
 

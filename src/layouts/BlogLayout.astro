@@ -1,37 +1,31 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import {colGrid, containerGrid, rowGrid} from "../Utils/ClassGenerator"
-import {fontSize} from "../Utils/FontsSizes"
+import { getBreadCrumb } from "../Utils/LinksGenerator";
 import  Breadcrumbs  from "../components/Breadcrumbs/Breadcrumbs.astro";
-import "astro-breadcrumbs/breadcrumbs.css";
 
 const html = await Astro.slots.render('default');
-import HeaderImg from "../assets/img/header.jpg";
-import { Image } from "astro:assets";
+import Text from "../components/Text/Text.astro";
 
-console.log();
-
-const breadcrumbItems = [
-  { label: 'Home', url: '/' },
-  { label: 'Category', url: '/category' },
-  { label: 'Subcategory', url: '/category/subcategory' },
-  { label: 'Current Page' },
-];
-
+const currentPath = Astro.url.pathname;
+const breadCrumbLinks = getBreadCrumb(currentPath, Astro.props.titleTeaser);
+const breadcrumbItems = breadCrumbLinks;
 ---
 
-<BaseLayout title="Astro">
-  
+<BaseLayout title={Astro.props.title} description={Astro.props.description} pretitle={Astro.props.pretitle}>  
+
+    <div class={containerGrid("text-white")}>
+        <Breadcrumbs items={breadcrumbItems} />
+    </div>
+    <Text 
+        pretitle={Astro.props.pretitle}
+        title={Astro.props.title}
+        description={Astro.props.description}
+    />  
+
     <div class={containerGrid() +  " text-white base-content-blog"}>
         <div class={rowGrid()}>
-            <div class={colGrid("md:w-10/12 blog-content")}>
-                
-                <div class="image-background">
-                    <div class="overlay"></div>
-                    <Image src={HeaderImg} alt="hola"/>
-                </div>
-                <Breadcrumbs items={breadcrumbItems} />
-
+            <div class={colGrid("md:w-10/12 blog-content")}>           
                 <Fragment set:html={html} />
             </div>
         </div>
@@ -39,7 +33,32 @@ const breadcrumbItems = [
 </BaseLayout>
 
 <style lang="scss" is:global>
-   
+   .mancha-color {
+    &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: #8750f7;
+            background: -o-linear-gradient(
+                190deg,
+                #8750f7 0%,
+                rgba(115, 67, 210, 0) 100%
+            );
+            background: linear-gradient(
+                260deg,
+                #8750f7 0%,
+                rgba(115, 67, 210, 0) 100%
+            );
+            -webkit-filter: blur(150px);
+            filter: blur(150px);
+            margin-left: -5%;
+            margin-bottom: -5%;
+        }
+   }
    /* .overlay {
         background-color: rgb(20, 12, 28);
         opacity: 0.4;
@@ -65,7 +84,7 @@ const breadcrumbItems = [
     .blog-content {
         * {
             line-height: 1.5;
-            font-size: 2rem;
+             font-size: 1.8rem; 
             color: #dddddd;
         }
         h1 {

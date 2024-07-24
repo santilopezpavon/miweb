@@ -4,16 +4,16 @@ import {linkGenerate} from "../../Utils/LinksGenerator.js";
 import { fontSize } from "../../Utils/FontsSizes";
 interface Props {
     items:Array<any>,
+    typeList?:string
 }
-const { items } = Astro.props;
-console.log(items);
+const { items, typeList ='guias' } = Astro.props;
 ---
-<div class={containerGrid("items-center")}>
-    <div class={rowGrid("items-center")}>
+<div class={containerGrid()}>
+    <div class={rowGrid()}>
             {items && items.map((item) => (
-                <div class={colGrid("md:w-1/2 mb-16 md:mb-0 text-white")}>
-                    <p class={fontSize(2) + " font-bold mb-3 ff-sora"}><a href={linkGenerate("/guias/" + item.slug)} >{item.data.title}</a></p>
-                    <p class={fontSize(1)} >{item.data.description}</p>
+                <div class={colGrid("md:w-1/2 mb-16  text-white")}>
+                    <p class={fontSize(2) + " font-bold mb-3 ff-sora"}><a href={linkGenerate("/" + typeList + "/" + item.slug)} >{item.data.titleTeaser}</a></p>
+                    <p class={fontSize(1)} >{item.data.descriptionTeaser}</p>
                 </div>
             ))}
     </div>

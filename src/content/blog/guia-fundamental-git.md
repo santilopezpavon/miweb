@@ -1,11 +1,10 @@
 ---
-title: "Fundamentos de GIT"
-description: "En esta Guía aprenderás los conceptos fundamentales de GIT"
-date: "2024-07-17"
-author: "Juan Pérez"
+pretitle: "Domina tus proyectos"
+title: "Fundamentos de Git: Tu camino hacia la colaboración eficiente"
+description: "Bienvenido a nuestra guía detallada sobre los fundamentos de Git. Aquí aprenderás todo lo que necesitas saber para empezar a usar Git, la herramienta de control de versiones más popular del mundo. Desde la creación de tu primer repositorio, hasta la gestión de ramas y la resolución de conflictos, esta guía te proporcionará las habilidades necesarias para colaborar eficientemente en cualquier proyecto de desarrollo. No importa si eres un principiante total o simplemente necesitas un repaso, ¡estamos aquí para ayudarte a dominar Git!"
+titleTeaser: "Fundamentos de Git"
+descriptionTeaser: "Descubre los conceptos básicos de Git. Domina el control de versiones para una colaboración eficiente en tus proyectos de desarrollo"
 ---
-
-# Guía Fundamental de GIT
 
 ## Qué es git
 

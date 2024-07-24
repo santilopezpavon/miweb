@@ -6,13 +6,16 @@ const blogCollection = defineCollection({
   type: 'content', // v2.5.0 and later
   schema: z.object({
     title: z.string(),
-    description: z.string()
+    description: z.string(),
+    pretitle: z.string(),
+    titleTeaser: z.string(),
+    descriptionTeaser: z.string()
   }),
 });
 
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
   'blog': blogCollection,
- // 'machineLearning': blogCollection,
+  'proyectos': blogCollection,
 
 };

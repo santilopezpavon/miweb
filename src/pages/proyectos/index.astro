@@ -1,16 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
-import {fontSize} from "../../Utils/FontsSizes";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import List from "../../components/Lists/List.astro";
-const blogEntries = await getCollection('blog');
+const blogEntries = await getCollection('proyectos');
 import { colGrid, containerGrid, rowGrid } from "../../Utils/ClassGenerator.js";
 import Text from '../../components/Text/Text.astro';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs.astro';
 import { getBreadCrumb } from "../../Utils/LinksGenerator";
 const currentPath = Astro.url.pathname;
-const breadCrumbLinks = getBreadCrumb(currentPath, "Guías básicas");
+const breadCrumbLinks = getBreadCrumb(currentPath, "Proyectos");
 const breadcrumbItems = breadCrumbLinks;
 ---
 
@@ -19,11 +18,11 @@ const breadcrumbItems = breadCrumbLinks;
         <Breadcrumbs items={breadcrumbItems} />
     </div>
     <Text 
-        pretitle="Aprende con nosotros" 
-        title="Guías de Desarrollo Web: Dominando los Fundamentos" 
-        description="Bienvenido a nuestra sección de guías de desarrollo web. Aquí encontrarás una serie de publicaciones detalladas que te ayudarán a entender y dominar los fundamentos del desarrollo web, incluyendo temas como Git, HTML, CSS, JavaScript y mucho más. No importa si eres un principiante buscando aprender desde cero o un desarrollador experimentado buscando refrescar tus conocimientos, nuestras guías están diseñadas para ayudarte a mejorar tus habilidades y llevar tu desarrollo web al siguiente nivel"
+        pretitle="Compromiso con el Código" 
+        title="Mis Proyectos de Desarrollo: Un Reflejo de Mi Experiencia Técnica" 
+        description=" “Bienvenido a mi espacio personal de proyectos de desarrollo. Aquí encontrarás una selección de proyectos en los que he trabajado en mi tiempo libre, cada uno de ellos demostrando mi habilidad y dedicación al desarrollo de software. Desde aplicaciones web hasta scripts útiles, estos proyectos son un testimonio de mi experiencia técnica y mi pasión por resolver problemas complejos a través del código. ¡Espero que encuentres estos proyectos tan interesantes como yo disfruté creándolos!"
     />
-    <List items={blogEntries} />
+    <List items={blogEntries} typeList='proyectos' />
 </BaseLayout>
 
 <style lang="scss">
