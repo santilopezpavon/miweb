@@ -44,6 +44,11 @@ import { colGrid, containerGrid, rowGrid } from "../../Utils/ClassGenerator";
             // Clona el enlace de anclaje para añadirlo a la lista
             var listItem = document.createElement("li");
             listItem.appendChild(anchor);
+            if (!list) {
+                console.error('No se encontró ningún elemento con el ID #your-list-id');
+                return;
+            }
+
             list.appendChild(listItem);
         });
     }
