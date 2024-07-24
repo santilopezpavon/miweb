@@ -8,3 +8,21 @@ descriptionTeaser: "Descubre cómo optimizar la carga de entidades en Drupal. Ap
 
 ## Necesidad del proyecto
 Como bien sabemos los usuarios de Drupal, la base de datos no es precisamente su punto fuerte. Aunque Drupal nos ofrece una gran flexibilidad en la creación de entidades y campos, esta misma flexibilidad actúa como una espada de Damocles. La flexibilidad tiene un precio y, en este caso, ese precio es la eficiencia.
+
+## Ejecución del proyecto
+
+Decidí desarrollar un módulo personalizado para Drupal que, además de las funciones habituales de Drupal, almacena las entidades en archivos JSON dentro de un directorio público. 
+
+La generación de estos archivos de entidad en formato JSON es posible gracias a la capacidad de serialización incorporada en el núcleo de Drupal.
+
+Con Drupal, podemos serializar una entidad de manera sencilla utilizando el serializador. Esto nos permite generar una representación de la misma entidad en formato JSON. Posteriormente, podemos almacenar este archivo utilizando el sistema de archivos propio de Drupal.
+
+```php
+$json_entity = $this->serializer->serialize($entity, 'json', []);
+$this->fileSystem->saveData($json_entity, $file_path, FileSystemInterface::EXISTS_REPLACE); 
+```
+
+De esta forma, en una arquitectura desacoplada, podríamos cargar entidades sin necesidad de consultar a Drupal. Incluso podríamos utilizar Drupal para generar estos archivos sin que ningún cliente tenga que hacer solicitudes para obtener las entidades.
+
+
+https://github.com/santilopezpavon/entity_json_suite
