@@ -60,3 +60,38 @@ function correctText(text) {
 
     return text;
 }
+
+export function createAnchorLinks() {
+    // Selecciona el div con la clase 'blog-content'
+    var blogContent = document.querySelector('.blog-content');
+  
+    // Selecciona todos los encabezados h2 y h3 dentro de 'blog-content'
+    var headers = blogContent.querySelectorAll('h2, h3');
+  
+    // Itera sobre cada encabezado
+    headers.forEach(function(header, index) {
+      // Crea un ID único para cada encabezado
+      var headerId = 'header-' + index;
+  
+      // Asigna el ID al encabezado
+      header.id = headerId;
+  
+      // Crea un nuevo enlace de anclaje
+      var anchor = document.createElement('a');
+      anchor.href = '#' + headerId;
+      anchor.textContent = header.textContent;
+  
+      // Limpia el contenido del encabezado
+      header.textContent = '';
+  
+      // Añade el enlace de anclaje al encabezado
+      header.appendChild(anchor);
+  
+      // Agrega el enlace de anclaje a una lista (por ejemplo, un elemento ul o ol)
+      var list = document.querySelector('#your-list-id'); // Reemplaza '#your-list-id' con el ID de tu lista
+      var listItem = document.createElement('li');
+      listItem.appendChild(anchor.cloneNode(true)); // Clona el enlace de anclaje para añadirlo a la lista
+      list.appendChild(listItem);
+    });
+  }
+  

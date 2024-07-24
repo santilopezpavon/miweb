@@ -1,33 +1,40 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import {colGrid, containerGrid, rowGrid} from "../Utils/ClassGenerator"
+import { colGrid, containerGrid, rowGrid } from "../Utils/ClassGenerator";
 import { getBreadCrumb } from "../Utils/LinksGenerator";
-import  Breadcrumbs  from "../components/Breadcrumbs/Breadcrumbs.astro";
-
-const html = await Astro.slots.render('default');
+import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs.astro";
+import { createAnchorLinks } from "../Utils/LinksGenerator";
+const html = await Astro.slots.render("default");
 import Text from "../components/Text/Text.astro";
-
+import MenuAnchors from "../components/MenuAnchors/MenuAnchors.astro";
 const currentPath = Astro.url.pathname;
 const breadCrumbLinks = getBreadCrumb(currentPath, Astro.props.titleTeaser);
 const breadcrumbItems = breadCrumbLinks;
 ---
 
-<BaseLayout title={Astro.props.title} description={Astro.props.description} pretitle={Astro.props.pretitle}>  
 
+<BaseLayout
+    title={Astro.props.title}
+    description={Astro.props.description}
+    pretitle={Astro.props.pretitle}
+>
     <div class={containerGrid("text-white")}>
-        <div class={colGrid("w-full")} >
+        <div class={colGrid("w-full")}>
             <Breadcrumbs items={breadcrumbItems} />
         </div>
     </div>
-    <Text 
+    <Text
         pretitle={Astro.props.pretitle}
         title={Astro.props.title}
         description={Astro.props.description}
-    />  
+    />
 
-    <div class={containerGrid() +  " text-white base-content-blog"}>
+    <MenuAnchors />
+   
+
+    <div class={containerGrid() + " text-white base-content-blog"}>
         <div class={rowGrid()}>
-            <div class={colGrid("w-full md:w-10/12 blog-content")}>           
+            <div class={colGrid("w-full md:w-10/12 blog-content")}>
                 <Fragment set:html={html} />
             </div>
         </div>
@@ -35,8 +42,8 @@ const breadcrumbItems = breadCrumbLinks;
 </BaseLayout>
 
 <style lang="scss" is:global>
-   .mancha-color {
-    &::before {
+    .mancha-color {
+        &::before {
             content: "";
             position: absolute;
             bottom: 0;
@@ -60,8 +67,8 @@ const breadcrumbItems = breadCrumbLinks;
             margin-left: -5%;
             margin-bottom: -5%;
         }
-   }
-   /* .overlay {
+    }
+    /* .overlay {
         background-color: rgb(20, 12, 28);
         opacity: 0.4;
         position: absolute;
@@ -70,7 +77,7 @@ const breadcrumbItems = breadCrumbLinks;
         bottom: 0;
         top: 0;
     }*/
-   
+
     .image-background {
         width: 100%;
         height: 300px;
@@ -80,18 +87,18 @@ const breadcrumbItems = breadCrumbLinks;
             object-fit: cover;
             width: 100%;
             height: 100%;
-            border: none!important;
+            border: none !important;
         }
     }
     .blog-content {
         * {
             line-height: 1.5;
-             font-size: 1.8rem; 
+            font-size: 1.8rem;
             color: #dddddd;
         }
         h1 {
             font-family: "Sora Variable", sans-serif;
-            font-size: 4.5rem;
+            font-size: 4.5rem!important;
             font-weight: 700;
             background: #875087;
             background: linear-gradient(to right, #875087 0%, #fff 100%);
@@ -103,17 +110,16 @@ const breadcrumbItems = breadCrumbLinks;
         p {
             margin-bottom: 2rem;
         }
-        
-        h2{
+
+        h2 {
             font-family: "Sora Variable", sans-serif;
-            font-size: 3.6rem;
+            font-size: 3.6rem!important;
             font-weight: 700;
             background: #875087;
             background: linear-gradient(to right, #875087 0%, #fff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 2.5rem;
-
         }
         h3 {
             font-family: "Sora Variable", sans-serif;
@@ -124,7 +130,6 @@ const breadcrumbItems = breadCrumbLinks;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 2.5rem;
-
         }
         li {
             display: block;
@@ -148,13 +153,11 @@ const breadcrumbItems = breadCrumbLinks;
         }
         strong {
             color: #875087;
-
         }
 
         img {
             border-radius: 15px;
-    border: 5px solid transparent;
+            border: 5px solid transparent;
         }
     }
-
 </style>

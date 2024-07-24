@@ -1,0 +1,68 @@
+---
+import { colGrid, containerGrid, rowGrid } from "../../Utils/ClassGenerator";
+---
+<script>
+    function createAnchors() {
+        // Selecciona el div con la clase 'blog-content'
+        var blogContent = document.querySelector(".blog-content");
+    
+        // Comprueba si blogContent es null
+        if (!blogContent) {
+            console.error('No se encontró ningún elemento con la clase .blog-content');
+            return;
+        }
+    
+        // Selecciona todos los encabezados h2 y h3 dentro de 'blog-content'
+        var headers = blogContent.querySelectorAll("h2, h3");
+    
+        // Agrega el enlace de anclaje a una lista (por ejemplo, un elemento ul o ol)
+        var list = document.querySelector("#your-list-id"); // Reemplaza '#your-list-id' con el ID de tu lista
+    
+        // Comprueba si list es null
+        if (!list) {
+            console.error('No se encontró ningún elemento con el ID #your-list-id');
+            return;
+        }
+    
+        // Itera sobre cada encabezado
+        headers.forEach(function (header, index) {
+            // Crea un ID único para cada encabezado
+            var headerId = "header-" + index;
+    
+            // Asigna el ID al encabezado
+            header.id = headerId;
+    
+            // Crea un nuevo enlace de anclaje
+            var anchor = document.createElement("a");
+            anchor.href = "#" + headerId;
+            anchor.textContent = header.textContent;
+    
+            // Añade una clase al enlace de anclaje para indicar si proviene de un encabezado h2 o h3
+            var headerType = header.tagName.toLowerCase(); // Esto será 'h2' o 'h3'
+            anchor.classList.add(headerType);
+    
+            // Clona el enlace de anclaje para añadirlo a la lista
+            var listItem = document.createElement("li");
+            listItem.appendChild(anchor);
+            list.appendChild(listItem);
+        });
+    }
+    
+    createAnchors();
+</script>
+<div class={containerGrid() + " text-white"}>
+    <div class={colGrid("w-full index-post")}>
+        <p class="mb-6 font-bold">Indice</p>
+        <ul id="your-list-id"></ul>
+    </div>
+</div>
+
+<style lang="scss" is:global>
+    .index-post ul li a.h3 {
+        padding-left: 3rem;
+    }
+    .index-post ul li  {
+        margin-bottom: 1rem;
+    }
+
+</style>
