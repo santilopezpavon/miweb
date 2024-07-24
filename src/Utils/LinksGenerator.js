@@ -7,18 +7,22 @@ export function getBaseUrl() {
 }
 
 export function getBreadCrumb(currentUrl, currentPage = "") {
-    // console.log(currentUrl.split("/"));
-    let split = currentUrl.split("/");
+    let splitpre = currentUrl.split("/");
     const baseUrl = getBaseUrl();
 
-    console.log(currentPage);
-    let urls = [];
     let preUrls = [{
         "url": baseUrl,
         "label": "Sobre mí"
     }];
     let url = '';
 
+    let split = [];
+    for (let index = 0; index < splitpre.length; index++) {
+        if(splitpre[index] != '') {
+            split.push(splitpre[index]);
+        }
+        
+    }
 
 
     for (let index = 0; index < split.length; index++) {
@@ -26,10 +30,9 @@ export function getBreadCrumb(currentUrl, currentPage = "") {
         url += "/" + element;
         url= url.replace(/\/\//g, "/");
 
-        if(element && ("/" + element) != baseUrl) {            let text = element.replace("/", "");  // Elimina la barra
+        if(element && ("/" + element) != baseUrl) {           
+            let text = element.replace("/", "");  // Elimina la barra
             text = text.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');  // Reemplaza los guiones por espacios y convierte la primera letra de cada palabra a mayúsculas
-            console.log("entro");
-            console.log(text);
             if(index != (split.length - 1) && text) {
                 preUrls.push({
                     "url": url,
