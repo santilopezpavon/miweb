@@ -56,9 +56,11 @@ import { colGrid, containerGrid, rowGrid } from "../../Utils/ClassGenerator";
     createAnchors();
 </script>
 <div class={containerGrid() + " text-white"}>
-    <div class={colGrid("w-full index-post")}>
+    <div class={colGrid("w-full ")}>
+        <div class="index-post">
         <p class="mb-6 font-bold">Indice</p>
         <ul id="your-list-id"></ul>
+    </div>
     </div>
 </div>
 
@@ -68,6 +70,17 @@ import { colGrid, containerGrid, rowGrid } from "../../Utils/ClassGenerator";
     }
     .index-post ul li  {
         margin-bottom: 1rem;
+    }
+    .index-post {
+        background-color: #140c1c;
+    border-radius: 4px;
+        max-width: 100%;
+        padding: 40px 30px;
+        position: relative;
+        margin-bottom: 40px;
+        border: none;
+        border-radius: 8px;
+        color: #dddddd;
     }
 
 </style>

@@ -15,13 +15,24 @@ const breadcrumbItems = breadCrumbLinks;
 
 <BaseLayout title="Guías básicas" description="">
     <div class={containerGrid("text-white")}>
-        <Breadcrumbs items={breadcrumbItems} />
+        <div class={colGrid()} >
+            <Breadcrumbs items={breadcrumbItems} />
+       </div> 
     </div>
     <Text 
         pretitle="Compromiso con el Código" 
         title="Mis Proyectos de Desarrollo: Un Reflejo de Mi Experiencia Técnica" 
-        description=" “Bienvenido a mi espacio personal de proyectos de desarrollo. Aquí encontrarás una selección de proyectos en los que he trabajado en mi tiempo libre, cada uno de ellos demostrando mi habilidad y dedicación al desarrollo de software. Desde aplicaciones web hasta scripts útiles, estos proyectos son un testimonio de mi experiencia técnica y mi pasión por resolver problemas complejos a través del código. ¡Espero que encuentres estos proyectos tan interesantes como yo disfruté creándolos!"
+        description="Bienvenido a mi espacio personal de proyectos de desarrollo. Aquí encontrarás una selección de proyectos en los que he trabajado en mi tiempo libre, cada uno de ellos demostrando mi habilidad y dedicación al desarrollo de software. Desde aplicaciones web hasta scripts útiles, estos proyectos son un testimonio de mi experiencia técnica y mi pasión por resolver problemas complejos a través del código. ¡Espero que encuentres estos proyectos tan interesantes como yo disfruté creándolos!"
     />
+
+    <div class={containerGrid("text-white")}>
+        <div class={colGrid()} >
+            <a target="_blank" href="https://github.com/santilopezpavon?tab=repositories">Mi repositorio</a>
+        </div>
+    </div>
+
+
+  
     <List items={blogEntries} typeList='proyectos' />
 </BaseLayout>
 

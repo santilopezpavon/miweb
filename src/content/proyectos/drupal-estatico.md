@@ -25,4 +25,4 @@ $this->fileSystem->saveData($json_entity, $file_path, FileSystemInterface::EXIST
 De esta forma, en una arquitectura desacoplada, podríamos cargar entidades sin necesidad de consultar a Drupal. Incluso podríamos utilizar Drupal para generar estos archivos sin que ningún cliente tenga que hacer solicitudes para obtener las entidades.
 
 
-https://github.com/santilopezpavon/entity_json_suite
+Repositorio: https://github.com/santilopezpavon/entity_json_suite
