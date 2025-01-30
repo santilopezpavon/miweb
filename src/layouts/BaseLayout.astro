@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/sora';
 import '@fontsource/roboto';
+import { linkGenerate } from "../Utils/LinksGenerator";
 
 import '../styles/base.scss'; 
 import Components from '../components/Dynamic/Components.astro';
@@ -14,6 +15,7 @@ import { getCollection, getEntry } from 'astro:content';
 const allBlogPosts = await getCollection('blog');
 console.log(allBlogPosts);
 */}
+
 ---
 <html lang="es">
   <head>
@@ -21,6 +23,8 @@ console.log(allBlogPosts);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{title}</title>
     <meta name="description" content={description} />
+
+  <link rel="icon" type="image/x-icon" href={linkGenerate("/favicon.ico")}>
   </head>
   <body>
     <Components componentName="header"/>

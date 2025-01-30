@@ -1,17 +1,20 @@
 ---
 import KeyFigure from "./KeyFigure.astro";
 
+let fechaActual = new Date();
+let currentYear = Number(fechaActual.getFullYear());
+
 const data = [
     {
-        "bigText": "10 Años",
+        "bigText": (currentYear - 2013) + " Años",
         "smallText": "Desarrollando webs"
     },
     {
-        "bigText": "9 Años",
+        "bigText": (currentYear - 2015) + " Años",
         "smallText": "Desarrollando Drupal"
     },
     {
-        "bigText": "3 Años",
+        "bigText": (currentYear - 2021) + " Años",
         "smallText": "Desarrollando NextJS / React JS"
     }
 ];
