@@ -5,6 +5,8 @@ import {fontSize} from "../../Utils/FontsSizes";
 import { Image } from "astro:assets";
 import testImage from "../../assets/img/santi-lopez.jpeg";
 import Button from "../Buttons/Button.astro";
+import { linkGenerate } from "../../Utils/LinksGenerator";
+
 /*
 console.log(Astro.site);
 console.log(import.meta.env.BASE_URL);*/
@@ -28,8 +30,14 @@ console.log(import.meta.env.BASE_URL);*/
                     seguir aprendiendo y creciendo en el mundo de la tecnología.
                 </p>
                 
-                <span class="mr-5"><Button target="_blank" label="GitHub" link="https://github.com/santilopezpavon/" /></span>
-                <span><Button target="_blank" label="Linkedin" link="https://www.linkedin.com/in/santiago-lopez-pavon-68566033/" /></span>
+                <span class="mr-5">
+                    <Button target="_blank" label="GitHub" link="https://github.com/santilopezpavon/" />
+                </span>
+                <span class="mr-5">
+                    <Button target="_blank" label="PDF" link={linkGenerate("/curriculum-santi-lopez.pdf")} />
+                </span>
+                    <Button target="_blank" label="Linkedin" link="https://www.linkedin.com/in/santiago-lopez-pavon-68566033/" />
+                </span>
                
             </div>
         </div>
