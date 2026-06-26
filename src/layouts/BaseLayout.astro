@@ -1,21 +1,15 @@
 ---
 import '@fontsource-variable/sora';
 import '@fontsource/roboto';
+import { ViewTransitions } from 'astro:transitions';
 import { linkGenerate } from "../Utils/LinksGenerator";
 
 import '../styles/base.scss'; 
 import Components from '../components/Dynamic/Components.astro';
+
 const { title, description } = Astro.props;
-{/* 
-import { getCollection, getEntry } from 'astro:content';
-
-// Get all entries from a collection.
-// Requires the name of the collection as an argument.
-// Example: retrieve `src/content/blog/**`
-const allBlogPosts = await getCollection('blog');
-console.log(allBlogPosts);
-*/}
-
+const siteUrl = "https://santilopezpavon.github.io";
+const fullUrl = siteUrl + import.meta.env.BASE_URL;
 ---
 <html lang="es">
   <head>
@@ -23,14 +17,38 @@ console.log(allBlogPosts);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="icon" type="image/x-icon" href={linkGenerate("/favicon.ico")}>
+    <link rel="canonical" href={fullUrl} />
 
-  <link rel="icon" type="image/x-icon" href={linkGenerate("/favicon.ico")}>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={siteUrl + linkGenerate("/src/assets/img/santi-lopez.jpeg")} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <ViewTransitions />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Santi López",
+      "jobTitle": "Desarrollador Web Full Stack",
+      "url": fullUrl,
+      "sameAs": [
+        "https://github.com/santilopezpavon",
+        "https://www.linkedin.com/in/santiago-lopez-pavon-68566033/"
+      ]
+    })} />
   </head>
   <body>
     <Components componentName="header"/>
     <article>
       <slot /> 
     </article>
-    {/* <Components componentName="footer"/>  */}
+    <Components componentName="footer"/>
   </body>
 </html>

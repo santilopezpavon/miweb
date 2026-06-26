@@ -1,0 +1,87 @@
+---
+import Button from "../Buttons/Button.astro";
+import { fontSize } from "../../Utils/FontsSizes";
+
+const projects = [
+    {
+        title: "Principios de Machine Learning",
+        description: "Una reconstrucción desde los fundamentos matemáticos hasta el algoritmo. Álgebra lineal, cálculo multivariable y optimización paso a paso.",
+        link: "https://ml-book.pages.dev/",
+        label: "Explorar el libro",
+        lang: "Libro",
+    },
+    {
+        title: "Entity JSON Suite",
+        description: "Suite de módulos Drupal que aplican la filosofía de ficheros estáticos al manejo de entidades JSON. Optimización de carga serializando entidades.",
+        link: "https://github.com/santilopezpavon/entity_json_suite",
+        label: "Ver en GitHub",
+        lang: "PHP",
+    },
+    {
+        title: "Ferro Pipeit",
+        description: "Orquestador de pipelines en Rust con DAG de tareas, ejecución en paralelo y validación de dependencias. Ligero y con trazabilidad de datos.",
+        link: "https://github.com/santilopezpavon/ferro_pipeit",
+        label: "Ver en GitHub",
+        lang: "Rust",
+    },
+];
+---
+
+<div class="element max-w-screen-xl mx-auto w-11/12">
+    <p class="text-lg-red lg:text-lg text-white font-bold mb-14 ff-sora text-center">Proyectos Personales</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((p) => (
+            <div class="project-card">
+                <div class="project-card-content">
+                    <p class="text-xs color-primary font-bold ff-sora mb-4 tracking-wide uppercase">{p.lang}</p>
+                    <p class={fontSize(2) + " text-white font-bold ff-sora mb-4"}>
+                        {p.title}
+                    </p>
+                    <p class="text-white text-xs mb-8 leading-relaxed legible">
+                        {p.description}
+                    </p>
+                    <Button label={p.label} link={p.link} target="_blank" />
+                </div>
+            </div>
+        ))}
+    </div>
+</div>
+
+<style lang="scss">
+    .project-card {
+        position: relative;
+        background: linear-gradient(135deg, #1a0f2e 0%, #140c1c 100%);
+        border: 1px solid rgba(181, 146, 247, 0.2);
+        border-radius: 25px;
+        overflow: hidden;
+        display: flex;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(260deg, #B592F7 0%, rgba(115, 67, 210, 0) 100%);
+            filter: blur(120px);
+            opacity: 0.12;
+            pointer-events: none;
+        }
+    }
+    .project-card-content {
+        position: relative;
+        padding: 2.5rem;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+        :global(.btn) {
+            margin-top: auto;
+        }
+    }
+    .tracking-wide {
+        letter-spacing: 0.15em;
+    }
+</style>

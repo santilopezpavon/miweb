@@ -5,9 +5,9 @@ interface Props {
 const { text } = Astro.props;
 ---
 
-<div class="content-icon w-full flex-wrap">
-    <div class="icon "><slot /></div>
-    <p class="text-center w-full text-icon color-primary ff-sora">{text}</p>
+<div class="content-icon">
+    <div class="icon"><slot /></div>
+    <p class="text-center text-icon color-primary ff-sora">{text}</p>
 </div>
 
 <style lang="scss" is:global>
@@ -16,20 +16,18 @@ const { text } = Astro.props;
         height: 180px;
         background-color: #140c1c;
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        overflow: hidden;
-        align-content: flex-end;
-        align-items: end;
         border: 1px solid transparent;
         border-radius: 25px;
-
     }
     .icon {
-        max-width: 80%;
-        height: 100px;
-        margin: 20px;
-        align-items: end;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        width: 80%;
         img {
             object-fit: contain;
             max-width: 60px;
@@ -37,8 +35,6 @@ const { text } = Astro.props;
         }
     }
     .text-icon {
-        margin-bottom: 20px;
-    margin-top: 20px;
-    font-size: 1.4rem;
+        font-size: 1.4rem;
     }
 </style>

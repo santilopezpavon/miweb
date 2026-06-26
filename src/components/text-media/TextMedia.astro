@@ -36,6 +36,7 @@ console.log(import.meta.env.BASE_URL);*/
                 <span class="mr-5 mb-5 inline-block">
                     <Button target="_blank" label="PDF" link={linkGenerate("/curriculum-santi-lopez.pdf")} />
                 </span>
+                <span class="mr-5 mb-5 inline-block">
                     <Button target="_blank" label="Linkedin" link="https://www.linkedin.com/in/santiago-lopez-pavon-68566033/" />
                 </span>
                
@@ -45,7 +46,7 @@ console.log(import.meta.env.BASE_URL);*/
             <div class="marco-img">
                 <Image
                     src={testImage}
-                    alt="A bird sitting on a nest of eggs."
+                    alt="Santi López, desarrollador web full stack"
                 />
             </div>
         </div>
@@ -64,18 +65,7 @@ console.log(import.meta.env.BASE_URL);*/
             width: 220px;
             height: 220px;
             border-radius: 50%;
-            background: #B592F7;
-            background: -o-linear-gradient(
-                190deg,
-                #B592F7 0%,
-                rgba(115, 67, 210, 0) 100%
-            );
-            background: linear-gradient(
-                260deg,
-                #B592F7 0%,
-                rgba(115, 67, 210, 0) 100%
-            );
-            -webkit-filter: blur(150px);
+            background: linear-gradient(260deg, #B592F7 0%, rgba(115, 67, 210, 0) 100%);
             filter: blur(150px);
             margin-left: -5%;
             margin-bottom: -5%;
@@ -83,13 +73,9 @@ console.log(import.meta.env.BASE_URL);*/
         img {
             display: inline-block;
             border-radius: 15px;
-            -webkit-transform: rotate(4.29deg);
-            -ms-transform: rotate(4.29deg);
             transform: rotate(4.29deg);
             position: relative;
             border: 2px solid #B592F7;
-            -webkit-transition: 0.3s;
-            -o-transition: 0.3s;
             transition: 0.3s;
         }
     }
